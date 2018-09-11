@@ -50,7 +50,8 @@ export default class AuthController {
 
                     const token = jwt.sign(p, pk.pk, {expiresIn: '7d'});
 
-                    res.json({success: true, message: 'Token criado!!', token: token});
+                    req.session.token = token;
+                    res.json({success: true, message: 'Token criado!!'});
                     res.end();
                 }
             })

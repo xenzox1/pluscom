@@ -7,6 +7,9 @@ const router = express.Router();
 router.use('/admin', express.static(path.join(__dirname, '/admin')));
 router.all('/admin/*', (req, res) => res.sendFile(path.join(__dirname, 'admin', 'index.html')));
 
+//testes
+router.all('/test/*', (req, res) => res.sendFile(path.join(__dirname, 'tests', 'index.html')));
+
 //normal
 router.use('/', express.static(path.join(__dirname, '/public')));
 router.all('/*', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));

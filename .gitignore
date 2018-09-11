@@ -4,6 +4,10 @@
 # secretes
 a.js
 src/raw_cliente/
+/https
+
+#tests
+src/client/tests/
 
 # misc
 .idea

@@ -11,7 +11,7 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended: false}));
 
 router.use((req, res, next) => {
-    const token = req.headers['x-access-token'];
+    const token = req.session.token;
     if (token) {
         jwt.verify(token, pk.pk, (err, decoded) => {
             if (err) {
