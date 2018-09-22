@@ -17,7 +17,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var MongoDBStore = require('connect-mongodb-session')(_expressSession2.default);
 
 var sessionConfig = new MongoDBStore({
-    uri: 'mongodb://localhost:27017/pluscom',
+    uri: 'mongodb://admin:bronze10@ds111913.mlab.com:11913/pluscom',
     collection: 'sessions'
 });
 

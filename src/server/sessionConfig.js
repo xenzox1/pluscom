@@ -4,7 +4,7 @@ import pk from "./pk";
 const MongoDBStore = require('connect-mongodb-session')(session);
 
 const sessionConfig = new MongoDBStore({
-    uri: 'mongodb://localhost:27017/pluscom',
+    uri: 'mongodb://admin:bronze10@ds111913.mlab.com:11913/pluscom',
     collection: 'sessions'
 });
 
