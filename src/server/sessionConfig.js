@@ -3,8 +3,16 @@ import pk from "./pk";
 
 const MongoDBStore = require('connect-mongodb-session')(session);
 
+let mongoURL = null;
+
+if(process.env.NODE_ENV === "production"){
+    mongoURL = 'mongodb://admin:bronze10@ds111913.mlab.com:11913/pluscom';
+} else {
+    mongoURL = 'mongodb://localhost:27017/pluscom';
+}
+
 const sessionConfig = new MongoDBStore({
-    uri: 'mongodb://admin:bronze10@ds111913.mlab.com:11913/pluscom',
+    uri: mongoURL,
     collection: 'sessions'
 });
 
