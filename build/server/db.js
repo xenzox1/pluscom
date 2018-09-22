@@ -26,7 +26,7 @@ var DBconnection = function () {
     _createClass(DBconnection, [{
         key: 'mongoDB',
         value: function mongoDB() {
-            var mongoose = _mongoose2.default.connect('mongodb://localhost:27017/pluscom', { useNewUrlParser: true });
+            var mongoose = _mongoose2.default.connect('mongodb://admin:bronze10@ds111913.mlab.com:11913/pluscom', { useNewUrlParser: true });
             mongoose.then(function () {
                 console.info('Connect to mongoDB success!');
                 // return mongoose;

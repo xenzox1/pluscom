@@ -14,7 +14,7 @@ export default class DBconnection {
     }
 
     mongoDB() {
-        const mongoose = MongoDB.connect('mongodb://localhost:27017/pluscom', {useNewUrlParser: true});
+        const mongoose = MongoDB.connect('mongodb://admin:bronze10@ds111913.mlab.com:11913/pluscom', {useNewUrlParser: true});
         mongoose.then(() => {
             console.info('Connect to mongoDB success!');
             // return mongoose;
