@@ -10,7 +10,8 @@ router.use(bodyParser.json());
 
 router.post('/login', Auth.login());
 router.post('/register', Auth.register());
-router.post('/verify/:userId', Auth.verify());
+router.all('/verify/:userId', Auth.verify());
+router.all('/status', AuthController.status());
 
 router.use((req, res) => {
     res.json({success: false, message: 'Rota invalida para autenticação'})
