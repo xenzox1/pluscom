@@ -2,12 +2,15 @@
   "name": "pluscom",
   "version": "0.0.2",
   "description": "Site e apis da pluscom.",
-  "main": "server.js",
+  "main": "app.js",
   "author": "Enzo",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon server.js --exec babel-node",
-    "start-node": "node app.js"
+    "start-local": "nodemon app.js --exec babel-node",
+    "clean": "rd /s /q build && mkdir build",
+    "build-babel": "babel -d ./build ./src -s",
+    "build": "yarn clean && yarn build-babel",
+    "start": "node ./build/server.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
