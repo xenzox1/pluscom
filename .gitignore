@@ -3,8 +3,8 @@
 
 # secretes
 a.js
-/raw_cliente
-/https
+/src/raw_cliente
+/src/https
 
 #tests
 src/client/tests/
