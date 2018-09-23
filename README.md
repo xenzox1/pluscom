@@ -14,7 +14,7 @@ Servidor da Pluscom.
  - username (Required)
  - password (Required)
   
- Resposta:
+ *Resposta:*
  
      {success: boolean, message: string, token: string}
 
@@ -29,17 +29,17 @@ Servidor da Pluscom.
  - password (Required)
  - nivel (Required)
   
- Resposta:
+ *Resposta:*
  
      {success: boolean, message: string}
  **Verificar**
 
     /verify/:userId All||POST
     
-  Parâmetros:
+  *Parâmetros:*
  - token (Opcional, via POST)
  
- Resposta:
+ *Resposta:*
  
      {success: boolean, message: string}
 
@@ -47,13 +47,13 @@ Servidor da Pluscom.
 
     /status All||POST
    
- Parâmetros:
+ *Parâmetros:*
  - token (Opcional, via POST)
 
- Resposta:
+ *Resposta:*
  
      {success: boolean}
      
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzNzk4MTU2OF19
+eyJoaXN0b3J5IjpbMTYxMTg5MjE2NF19
 -->
