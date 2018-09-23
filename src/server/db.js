@@ -4,8 +4,6 @@ import MongoDB from 'mongoose';
 export default class DBconnection {
 
     constructor() {
-        super();
-
         if(process.env.NODE_ENV === "production"){
             this.mongoURL = 'mongodb://admin:bronze10@ds111913.mlab.com:11913/pluscom';
         } else {

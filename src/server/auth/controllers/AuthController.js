@@ -7,7 +7,7 @@ export default class AuthController {
     static Erro(err) {
         return {
             success: false,
-            error: err
+            message: err
         }
     }
 
@@ -47,9 +47,11 @@ export default class AuthController {
                             password: up,
                             nivel: r[0].nivel
                         };
+                        
+                        const token = jwt.sign(p, pk.pk, {expiresIn: '7d'});
 
-                        req.session.token = jwt.sign(p, pk.pk, {expiresIn: '7d'});
-                        res.json({success: true, message: 'Token criado!!'});
+                        req.session.token = token;
+                        res.json({success: true, message: 'Token criado!!', token: token});
                         res.end();
                     } else {
                         if (!err) {
@@ -90,7 +92,7 @@ export default class AuthController {
 
     verify() {
         return (req, res) => {
-            const token = req.headers['x-access-token'];
+            const token = req.session.token || req.body.token;
             if (token) {
                 jwt.verify(token, pk.pk, (err, decoded) => {
                     if (err) {
@@ -140,6 +142,13 @@ export default class AuthController {
                 } else {
                     res.json({success: false});
                 }
+            } else if(req.body.token) {
+                const token = req.body.token;
+                    if (tokenVerify(token)) {
+                        res.json({success: true});
+                    } else {
+                        res.json({success: false});
+                    }
             } else {
                 res.json({success: false});
             }
