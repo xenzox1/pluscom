@@ -54,3 +54,6 @@ Servidor da Pluscom.
  
      {success: boolean}
      
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTgzNzk4MTU2OF19
+-->
